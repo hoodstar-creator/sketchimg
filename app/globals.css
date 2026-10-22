@@ -1,0 +1,108 @@
+:root {
+  color-scheme: light;
+  --ink: #1f1d1a;
+  --muted: #6f6a63;
+  --paper: #fffdf8;
+  --line: #ded8ce;
+  --accent: #1f1d1a;
+  --danger: #b42318;
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #f2eee6;
+  font-family: Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+button, input { font: inherit; }
+
+button, .button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 12px;
+  padding: 0 20px;
+  color: white;
+  background: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:disabled { opacity: .45; cursor: wait; }
+
+.page {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 20px;
+}
+
+.card {
+  width: min(100%, 520px);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 24px;
+  background: var(--paper);
+  box-shadow: 0 18px 60px rgba(54, 45, 31, .08);
+}
+
+h1 { margin: 0 0 8px; font-size: clamp(26px, 6vw, 38px); line-height: 1.15; }
+p { color: var(--muted); line-height: 1.55; }
+
+.stack { display: grid; gap: 16px; }
+
+.field { display: grid; gap: 8px; }
+.field label { font-size: 14px; font-weight: 700; }
+.field input[type="password"] {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 14px;
+  background: white;
+}
+
+.upload-drop {
+  display: grid;
+  min-height: 170px;
+  place-items: center;
+  border: 2px dashed var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.upload-drop strong { display: block; margin-bottom: 6px; }
+
+.preview, .photo {
+  display: block;
+  width: 100%;
+  max-height: 62dvh;
+  border-radius: 14px;
+  object-fit: contain;
+  background: #eee9df;
+}
+
+.qr {
+  display: block;
+  width: min(100%, 320px);
+  height: auto;
+  margin: 8px auto;
+  border-radius: 12px;
+}
+
+.center { text-align: center; }
+.error { color: var(--danger); font-size: 14px; }
+.hint { margin: 0; font-size: 13px; }
+.full { width: 100%; }
+.link { color: inherit; text-underline-offset: 3px; }

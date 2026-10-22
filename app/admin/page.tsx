@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { isAdmin } from "@/lib/auth";
+import Brand from "@/app/brand";
 import UploadPanel from "./upload-panel";
 
 export default async function AdminPage() {
@@ -8,9 +9,10 @@ export default async function AdminPage() {
   return (
     <main className="page">
       <section className="card stack">
-        <div>
-          <h1>사진 전달</h1>
-          <p>사진 한 장을 선택하면 손님용 QR코드를 만듭니다.</p>
+        <Brand />
+        <div className="section-heading">
+          <h1>사진 업로드</h1>
+          <p>완성된 그림을 촬영하면 손님용 QR코드를 만듭니다.</p>
         </div>
         <UploadPanel />
       </section>
